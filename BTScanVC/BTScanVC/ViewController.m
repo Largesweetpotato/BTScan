@@ -7,23 +7,30 @@
 //
 
 #import "ViewController.h"
+#import "BTScanViewController.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *scanResultLabel;
+@property (copy, nonatomic) NSString *returnStr;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
 }
 
+- (IBAction)scanBtnClick:(id)sender {
+    
+    BTScanViewController *scanVC = [[BTScanViewController alloc] init];
+    [self.navigationController pushViewController:scanVC animated:YES];
+    scanVC.returnScanStringBlock = ^(NSString * returnStr){
+    
+        NSLog(@"%@",returnStr);
+        self.scanResultLabel.text = returnStr;
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    };
 }
-
 
 @end

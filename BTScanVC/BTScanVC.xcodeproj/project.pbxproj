@@ -15,6 +15,7 @@
 		0E02CCE71E7A90BE0011CE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E02CCE51E7A90BE0011CE39 /* LaunchScreen.storyboard */; };
 		0E02CCF21E7A90BE0011CE39 /* BTScanVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E02CCF11E7A90BE0011CE39 /* BTScanVCTests.m */; };
 		0E02CCFD1E7A90BE0011CE39 /* BTScanVCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E02CCFC1E7A90BE0011CE39 /* BTScanVCUITests.m */; };
+		0E02CD0D1E7A920C0011CE39 /* BTScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E02CD0C1E7A920C0011CE39 /* BTScanViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		0E02CCF81E7A90BE0011CE39 /* BTScanVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTScanVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E02CCFC1E7A90BE0011CE39 /* BTScanVCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTScanVCUITests.m; sourceTree = "<group>"; };
 		0E02CCFE1E7A90BE0011CE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E02CD0B1E7A920C0011CE39 /* BTScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTScanViewController.h; sourceTree = "<group>"; };
+		0E02CD0C1E7A920C0011CE39 /* BTScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTScanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		0E02CCD61E7A90BE0011CE39 /* BTScanVC */ = {
 			isa = PBXGroup;
 			children = (
+				0E02CD0A1E7A920C0011CE39 /* Controller */,
 				0E02CCDA1E7A90BE0011CE39 /* AppDelegate.h */,
 				0E02CCDB1E7A90BE0011CE39 /* AppDelegate.m */,
 				0E02CCDD1E7A90BE0011CE39 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				0E02CCFE1E7A90BE0011CE39 /* Info.plist */,
 			);
 			path = BTScanVCUITests;
+			sourceTree = "<group>";
+		};
+		0E02CD0A1E7A920C0011CE39 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E02CD0B1E7A920C0011CE39 /* BTScanViewController.h */,
+				0E02CD0C1E7A920C0011CE39 /* BTScanViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +215,7 @@
 		0E02CCCC1E7A90BE0011CE39 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = WangJiadong;
 				TargetAttributes = {
 					0E02CCD31E7A90BE0011CE39 = {
@@ -279,6 +292,7 @@
 				0E02CCDF1E7A90BE0011CE39 /* ViewController.m in Sources */,
 				0E02CCDC1E7A90BE0011CE39 /* AppDelegate.m in Sources */,
 				0E02CCD91E7A90BE0011CE39 /* main.m in Sources */,
+				0E02CD0D1E7A920C0011CE39 /* BTScanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +365,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -398,6 +413,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -514,6 +530,7 @@
 				0E02CD031E7A90BE0011CE39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E02CD041E7A90BE0011CE39 /* Build configuration list for PBXNativeTarget "BTScanVCTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +539,7 @@
 				0E02CD061E7A90BE0011CE39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E02CD071E7A90BE0011CE39 /* Build configuration list for PBXNativeTarget "BTScanVCUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +548,7 @@
 				0E02CD091E7A90BE0011CE39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
