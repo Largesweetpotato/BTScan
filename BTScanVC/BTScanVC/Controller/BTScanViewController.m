@@ -45,12 +45,10 @@
     [super viewWillAppear:animated];
     [self start];
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
 }
-
 -(void)setupUI{
 
     self.view.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.1f];
@@ -58,22 +56,13 @@
     [self setupRectOfInterest];
     [self.view addSubview:self.remindLable];
     self.view.layer.masksToBounds = YES;
-    self.navigationItem.title = @"二维码/条形码";
+    self.navigationItem.title = self.customTitle != nil ? self.customTitle : @"二维码/条形码";
+    UIImage *image = [[UIImage alloc] init];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 }
-
 #pragma mark ----开始扫描方法
-
-/**
- *  释放前停止会话
- */
-- (void)dealloc
-{
-    
-    [self stop];
-    
-}
-
 -(void) start{
     
     CGRect scanF = self.scanFrame;
@@ -93,13 +82,7 @@
     
 }
 
--(void) stop{
-    
-    [self.session stopRunning];
-}
-
-- (AVCaptureSession *)session
-{
+- (AVCaptureSession *)session{
     if (!_session) {
         _session = [AVCaptureSession new];
         [_session setSessionPreset: AVCaptureSessionPresetHigh];
@@ -108,8 +91,7 @@
     return _session;
 }
 
-- (AVCaptureDeviceInput *)input
-{
+- (AVCaptureDeviceInput *)input{
     if (!_input) {
         AVCaptureDevice * device = [AVCaptureDevice defaultDeviceWithMediaType: AVMediaTypeVideo];
         _input = [AVCaptureDeviceInput deviceInputWithDevice: device error: nil];
@@ -117,8 +99,7 @@
     return _input;
 }
 
-- (AVCaptureMetadataOutput *)output
-{
+- (AVCaptureMetadataOutput *)output{
     if (!_output) {
         _output = [AVCaptureMetadataOutput new];
         [_output setMetadataObjectsDelegate: self queue: dispatch_get_main_queue()];
@@ -126,8 +107,7 @@
     return _output;
 }
 
-- (AVCaptureVideoPreviewLayer *)previewLayer
-{
+- (AVCaptureVideoPreviewLayer *)previewLayer{
     if (!_previewLayer) {
         _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession: self.session];
         _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
@@ -136,8 +116,7 @@
     return _previewLayer;
 }
 
-- (CGRect)scanRect
-{
+- (CGRect)scanRect{
     if (CGRectEqualToRect(_scanRect, CGRectZero)) {
         CGRect rectOfInterest = self.output.rectOfInterest;
         CGFloat xOffset = 1 - 2 * ScanSpaceOFFSET;
@@ -147,8 +126,7 @@
     return _scanRect;
 }
 
-- (UILabel *)remindLable
-{
+- (UILabel *)remindLable{
     if (!_remindLable) {
         CGRect textRect = self.scanRect;
         textRect.origin.y += CGRectGetHeight(textRect) + 20;
@@ -168,8 +146,7 @@
 /**
  *  扫描框
  */
-- (CAShapeLayer *)scanRectLayer
-{
+- (CAShapeLayer *)scanRectLayer{
     if (!_scanRectLayer) {
         CGRect scanRect = self.scanRect;
         scanRect.origin.x -= 1;
@@ -202,7 +179,6 @@
 }
 
 -(CAShapeLayer *)maskLayer{
-    
     if (!_maskLayer) {
         
         _maskLayer = [CAShapeLayer layer];
@@ -233,7 +209,6 @@
     CGFloat maxY = CGRectGetMaxY(exceptRect);
     CGFloat width = CGRectGetWidth(exceptRect);
     CGFloat height = CGRectGetHeight(exceptRect);
-    
 
     self.scanFrame = CGRectMake(minX, minY, width, height);
 
@@ -249,11 +224,9 @@
 -(void) setupIODevice{
     
     if ([self.session canAddInput:self.input]) {
-        
         [_session addInput:_input];
     }
     if ([self.session canAddOutput:self.output]) {
-        
         [_session addOutput:_output];
         _output.metadataObjectTypes = @[
                                 AVMetadataObjectTypeUPCECode,
@@ -270,7 +243,6 @@
                                 AVMetadataObjectTypeITF14Code,
                                 AVMetadataObjectTypeDataMatrixCode];
     }
-    
 }
 
 -(void) setupRectOfInterest{
@@ -294,8 +266,19 @@
         [self.scanLineImageView removeFromSuperview];
         !self.returnScanStringBlock ?  : self.returnScanStringBlock(str);
         [self.navigationController popViewControllerAnimated:YES];
-
     }
+}
+
+-(void) stop{
+    
+    [self.session stopRunning];
+}
+/**
+ *  释放前停止会话
+ */
+- (void)dealloc
+{
+    [self stop];
 }
 
 @end

@@ -12,5 +12,6 @@
 
 @property (nonatomic, copy) void (^returnScanStringBlock)(NSString *);
 @property (nonatomic, assign) double scanLineDuration;
+@property (nonatomic, copy) NSString *customTitle;
 
 @end

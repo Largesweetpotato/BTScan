@@ -26,6 +26,7 @@
     BTScanViewController *scanVC = [[BTScanViewController alloc] init];
     [self.navigationController pushViewController:scanVC animated:YES];
     scanVC.scanLineDuration = 1.0;
+    scanVC.customTitle = @"scan";
     scanVC.returnScanStringBlock = ^(NSString * returnStr){
     
         NSLog(@"%@",returnStr);
