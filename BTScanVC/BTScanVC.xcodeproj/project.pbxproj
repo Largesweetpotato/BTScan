@@ -16,6 +16,7 @@
 		0E02CCF21E7A90BE0011CE39 /* BTScanVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E02CCF11E7A90BE0011CE39 /* BTScanVCTests.m */; };
 		0E02CCFD1E7A90BE0011CE39 /* BTScanVCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E02CCFC1E7A90BE0011CE39 /* BTScanVCUITests.m */; };
 		0E02CD0D1E7A920C0011CE39 /* BTScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E02CD0C1E7A920C0011CE39 /* BTScanViewController.m */; };
+		0EF036261EB3154600C647A7 /* BTScanImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0EF036251EB3154600C647A7 /* BTScanImage.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		0E02CCFE1E7A90BE0011CE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E02CD0B1E7A920C0011CE39 /* BTScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTScanViewController.h; sourceTree = "<group>"; };
 		0E02CD0C1E7A920C0011CE39 /* BTScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTScanViewController.m; sourceTree = "<group>"; };
+		0EF036251EB3154600C647A7 /* BTScanImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BTScanImage.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		0E02CD0A1E7A920C0011CE39 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0EF036251EB3154600C647A7 /* BTScanImage.bundle */,
 				0E02CD0B1E7A920C0011CE39 /* BTScanViewController.h */,
 				0E02CD0C1E7A920C0011CE39 /* BTScanViewController.m */,
 			);
@@ -262,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF036261EB3154600C647A7 /* BTScanImage.bundle in Resources */,
 				0E02CCE71E7A90BE0011CE39 /* LaunchScreen.storyboard in Resources */,
 				0E02CCE41E7A90BE0011CE39 /* Assets.xcassets in Resources */,
 				0E02CCE21E7A90BE0011CE39 /* Main.storyboard in Resources */,

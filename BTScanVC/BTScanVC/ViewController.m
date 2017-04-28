@@ -11,7 +11,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *scanResultLabel;
-@property (copy, nonatomic) NSString *returnStr;
+
 @end
 
 @implementation ViewController
