@@ -84,7 +84,7 @@
     self.scanLineImageView = scanLineImageView;
     [self.view addSubview:self.scanLineImageView];
     /* 添加动画 */
-    [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionRepeat animations:^{
+    [UIView animateWithDuration:self.scanLineDuration delay:0.0 options:UIViewAnimationOptionRepeat animations:^{
         
         self.scanLineImageView.frame = self.scanFrame;
         
@@ -255,7 +255,20 @@
     if ([self.session canAddOutput:self.output]) {
         
         [_session addOutput:_output];
-        _output.metadataObjectTypes = @[AVMetadataObjectTypeUPCECode,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeQRCode,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode];
+        _output.metadataObjectTypes = @[
+                                AVMetadataObjectTypeUPCECode,
+                                AVMetadataObjectTypeCode39Code,
+                                AVMetadataObjectTypeCode39Mod43Code,
+                                AVMetadataObjectTypeEAN13Code,
+                                AVMetadataObjectTypeEAN8Code,
+                                AVMetadataObjectTypeCode93Code,
+                                AVMetadataObjectTypeCode128Code,
+                                AVMetadataObjectTypePDF417Code,
+                                AVMetadataObjectTypeQRCode,
+                                AVMetadataObjectTypeAztecCode,
+                                AVMetadataObjectTypeInterleaved2of5Code,
+                                AVMetadataObjectTypeITF14Code,
+                                AVMetadataObjectTypeDataMatrixCode];
     }
     
 }
